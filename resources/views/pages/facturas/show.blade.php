@@ -5,6 +5,8 @@
         <div>{{ session('status') }}</div>
     @endif
 
+    <a href="{{ route('facturas.index') }}">Volver al listado</a>
+
     <div>
         <h1>Factura {{ $factura->id }}</h1>
         <p><strong>Fecha:</strong> {{$factura->fecha->format('g:i:s a , d M Y ')}}</p>
