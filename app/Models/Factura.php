@@ -11,6 +11,10 @@ class Factura extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'fecha' => 'date',
+    ];
+
     /**
      * @return BelongsTo
      */
