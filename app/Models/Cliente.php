@@ -10,6 +10,12 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombres',
+        'apellidos',
+        'dni',
+    ];
+
     /**
      * @return HasMany
      */
