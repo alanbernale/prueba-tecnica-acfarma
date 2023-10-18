@@ -2,7 +2,7 @@
     <h1>Facturas</h1>
 </div>
 
-<table>
+<table class="table">
     <thead>
     <tr>
         <th style="width: 40px; text-align: center;">Id</th>
