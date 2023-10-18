@@ -11,6 +11,13 @@ class Factura extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'cliente_id',
+        'total',
+        'fecha',
+        'observacion',
+    ];
+
     protected $casts = [
         'fecha' => 'date',
     ];

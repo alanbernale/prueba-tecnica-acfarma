@@ -11,8 +11,12 @@
         <h1>Factura {{ $factura->id }}</h1>
         <p><strong>Fecha:</strong> {{$factura->fecha->format('g:i:s a , d M Y ')}}</p>
         <p><strong>Observación:</strong> {{$factura->observacion}}</p>
+        <p><strong>Total:</strong> S/ {{number_format($factura->total, 2)}}</p>
     </div>
 
+    <div>
+        <a href="{{ route('factura.factura-detalles.create', $factura->id) }}">Agregar detalles</a>
+    </div>
     <table>
         <thead>
         <tr>

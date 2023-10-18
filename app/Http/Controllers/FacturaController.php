@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreFacturaRequest;
+use App\Models\Cliente;
 use App\Models\Factura;
 use Illuminate\Http\Request;
 
@@ -24,15 +26,30 @@ class FacturaController extends Controller
      */
     public function create()
     {
-        //
+        $clientes = Cliente::all();
+
+        return view('pages.facturas.create', [
+            'clientes' => $clientes,
+        ]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreFacturaRequest $request)
     {
-        //
+        $validated =  $request->validated();
+
+        $factura = new Factura([
+            'cliente_id' => $validated['cliente_id'],
+            'total' => 0,
+            'fecha' => $validated['fecha'],
+            'observacion' => $validated['observacion'],
+        ]);
+
+        $factura->save();
+
+        return to_route('facturas.show', $factura->id)->with('status', 'Recurso creado.');
     }
 
     /**

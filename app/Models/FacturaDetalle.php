@@ -10,6 +10,14 @@ class FacturaDetalle extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'factura_id',
+        'producto_id',
+        'costo_unitario',
+        'cantidad',
+        'total',
+    ];
+
     /**
      * @return BelongsTo
      */

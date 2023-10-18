@@ -7,6 +7,7 @@
 
     <div>
         <h1>Facturas</h1>
+        <a href="{{ route('facturas.create') }}">Crear nueva factura</a>
     </div>
 
     <table>
