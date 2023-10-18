@@ -8,6 +8,8 @@
     <div>
         <h1>Facturas</h1>
         <a href="{{ route('facturas.create') }}">Crear nueva factura</a>
+        <a href="{{ route('facturas.export-excel') }}" target="_blank">Exportar a Excel</a>
+        <a href="{{ route('facturas.export-pdf') }}" target="_blank">Exportar a PDF</a>
     </div>
 
     <table>

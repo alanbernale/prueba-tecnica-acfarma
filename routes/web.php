@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ExcelExportController;
 use App\Http\Controllers\FacturaController;
 use App\Http\Controllers\FacturaDetalleController;
+use App\Http\Controllers\PDFExportController;
 use App\Http\Controllers\ProductoController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +34,8 @@ Route::post('/clientes', [ClienteController::class, 'store'])->name('clientes.st
 Route::get('/facturas', [FacturaController::class, 'index'])->name('facturas.index');
 Route::get('/facturas/create', [FacturaController::class, 'create'])->name('facturas.create');
 Route::post('/facturas', [FacturaController::class, 'store'])->name('facturas.store');
+Route::get('/facturas/export/excel', [ExcelExportController::class, 'exportFacturas'])->name('facturas.export-excel');
+Route::get('/facturas/export/pdf', [PDFExportController::class, 'exportFacturas'])->name('facturas.export-pdf');
 Route::get('/facturas/{factura}', [FacturaController::class, 'show'])->name('facturas.show');
 
 Route::get('/facturas/{factura}/factura-detalles/create', [FacturaDetalleController::class, 'create'])->name('factura.factura-detalles.create');
