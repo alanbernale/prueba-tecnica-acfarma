@@ -10,6 +10,12 @@ class Producto extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'codigo',
+        'descripcion',
+        'precio',
+    ];
+
     /**
      * @return HasMany
      */
